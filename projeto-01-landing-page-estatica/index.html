@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStart - Revolucione seu Negócio</title>
+    <meta name="description" content="Plataforma SaaS que aumenta sua produtividade em 300%. Teste grátis por 14 dias.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="images/hero-bg.webp" as="image">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="TechStart - Revolucione seu Negócio">
+    <meta property="og:description" content="Plataforma SaaS que aumenta sua produtividade em 300%">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="images/logo.svg" alt="TechStart" width="120" height="40">
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Recursos</a>
+                    <a href="#pricing">Preços</a>
+                    <a href="#contact" class="btn-secondary">Contato</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Revolucione seu Negócio com <span class="highlight">TechStart</span></h1>
+                    <p class="hero-subtitle">Aumente sua produtividade em 300% com nossa plataforma SaaS inteligente. Mais de 10.000 empresas já confiam em nós.</p>
+                    
+                    <form class="lead-form" id="leadForm">
+                        <input type="email" placeholder="Seu melhor e-mail" required>
+                        <button type="submit" class="btn-primary">Começar Teste Grátis</button>
+                    </form>
+                    
+                    <p class="form-note">✓ 14 dias grátis • ✓ Sem cartão de crédito • ✓ Suporte 24/7</p>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="images/dashboard-preview.webp" alt="Dashboard TechStart" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Por que escolher a TechStart?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Ultra Rápido</h3>
+                        <p>Interface responsiva que carrega em menos de 1 segundo</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>100% Seguro</h3>
+                        <p>Criptografia de ponta a ponta e compliance LGPD</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Analytics Avançado</h3>
+                        <p>Relatórios em tempo real com insights acionáveis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <div class="container">
+                <h2>Empresas que confiam na TechStart</h2>
+                <div class="logos">
+                    <img src="images/client-1.svg" alt="Cliente 1" width="120" height="60">
+                    <img src="images/client-2.svg" alt="Cliente 2" width="120" height="60">
+                    <img src="images/client-3.svg" alt="Cliente 3" width="120" height="60">
+                    <img src="images/client-4.svg" alt="Cliente 4" width="120" height="60">
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="cta">
+            <div class="container">
+                <h2>Pronto para começar?</h2>
+                <p>Junte-se a mais de 10.000 empresas que já transformaram seus resultados</p>
+                <button class="btn-primary btn-large" onclick="document.getElementById('leadForm').scrollIntoView()">
+                    Começar Agora - Grátis
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TechStart. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacidade</a>
+                <a href="#terms">Termos</a>
+                <a href="#contact">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
