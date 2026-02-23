@@ -1,0 +1,46 @@
+# ============================================
+# CONFIGURAÇÃO DO PROJETO GCP
+# ============================================
+# Este arquivo contém as informações do seu projeto Pluralsight Sandbox
+
+PROJECT_NUMBER=948672734363
+PROJECT_ID=playground-s-11-749c2f19
+PROJECT_TYPE=pluralsight-sandbox
+REGION=us-central1
+
+# ============================================
+# URLS IMPORTANTES
+# ============================================
+
+# Console GCP
+CONSOLE_URL=https://console.cloud.google.com/home/dashboard?project=playground-s-11-749c2f19
+
+# Kubernetes Engine
+GKE_URL=https://console.cloud.google.com/kubernetes/list?project=playground-s-11-749c2f19
+
+# Artifact Registry
+ARTIFACT_REGISTRY_URL=https://console.cloud.google.com/artifacts?project=playground-s-11-749c2f19
+
+# VPC Networks
+VPC_URL=https://console.cloud.google.com/networking/networks/list?project=playground-s-11-749c2f19
+
+# ============================================
+# COMANDOS ÚTEIS
+# ============================================
+
+# Configurar gcloud
+# gcloud config set project playground-s-11-749c2f19
+
+# Configurar kubectl
+# gcloud container clusters get-credentials react-nginx-cluster-hml --region us-central1 --project playground-s-11-749c2f19
+
+# URL do Artifact Registry
+# us-central1-docker.pkg.dev/playground-s-11-749c2f19/react-nginx-repo
+
+# ============================================
+# NOTAS
+# ============================================
+# - Este é um sandbox temporário da Pluralsight
+# - Recursos podem ser deletados automaticamente
+# - Não armazene dados importantes aqui
+# - Sempre faça backup do código no Git

@@ -1,0 +1,17 @@
+# Diretorios
+terraform-modules/
+docs/
+app/
+.terraform/
+node_modules/
+
+# Arquivos
+Makefile
+terraform.tfvars.example
+deployment.yaml.example
+ARCHITECTURE.md
+terraform.tfvars
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+.DS_Store

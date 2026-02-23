@@ -1,0 +1,45 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1 # Versão do recurso
+    kind: Deployment # O tipo de recurso
+    name: react-nginx # Nome do deployment
+  minReplicas: 3
+  maxReplicas: 10
+  metrics: # Tipo de metrica
+    - type: Resource
+      resource:
+        name: cpu # Nesse caso cpu (memory se quiser memoria)
+        target:
+          type: Utilization # Tipo por utilização
+          averageUtilization: 50 # 50% de uso
+    - type: ContainerResource
+      containerResource:
+        name: cpu # Nesse caso cpu (memory se quiser memoria)
+        container: react-nginx
+        target:
+          type: Utilization # Tipo por utilização
+          averageUtilization: 50 # 50% de uso
+    - type: Resource
+      resource:
+        name: memory # Nesse caso memory 
+        target:
+          type: Utilization # Tipo por utilização
+          averageUtilization: 50 # 50% de uso
+    - type: ContainerResource
+      containerResource:
+        name: memory # Nesse caso cpu (memory se quiser memoria)
+        container: react-nginx
+        target:
+          type: Utilization # Tipo por utilização
+          averageUtilization: 50 # 50% de uso
+  behavior: # Comportamento
+    scaleUp:
+      stabilizationWindowSeconds: 5 # Periodo de estabilização para escalonamento UP
+      policies:
+        - type: Percent # Tipo de politica (percentual)
+          value: 100 # Valor da politica (100%)
+          periodSeconds: 10 # Periodo de tempo da politica (10s)
