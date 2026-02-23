@@ -2,6 +2,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: hpa
+  namespace: app
 spec:
   scaleTargetRef:
     apiVersion: apps/v1 # Versão do recurso
