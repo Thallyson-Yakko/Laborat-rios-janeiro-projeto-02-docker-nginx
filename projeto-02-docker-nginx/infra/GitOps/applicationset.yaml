@@ -1,0 +1,44 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: projeto-02-apps
+  namespace: argocd
+spec:
+  generators:
+  - matrix:
+      generators:
+      - list:
+          elements:
+          - path: projeto-02-docker-nginx/k8s
+            name: react-app
+            type: directory
+          - path: projeto-02-docker-nginx/infra/ArgoCD
+            name: argocd
+            type: helm
+          - path: projeto-02-docker-nginx/infra/Metric-Server
+            name: metric-server
+            type: helm
+          - path: projeto-02-docker-nginx/infra/Prometheus
+            name: prometheus
+            type: helm
+          - path: projeto-02-docker-nginx/infra/Gateway-Api
+            name: gateway-api
+            type: helm
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Thallyson-Yakko/laboratorios-janeiro
+        targetRevision: master
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{name}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true

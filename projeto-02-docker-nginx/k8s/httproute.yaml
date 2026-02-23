@@ -1,13 +1,13 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: react-nginx-route
-  namespace: ingress
+  name: react-nginx
+  namespace: app
 spec:
   parentRefs:
   - name: react-nginx-gateway
   hostnames:
-  - "app-internal.teste.com"
+  - "app.local"
   rules:
   - backendRefs:
     - name: react-nginx-service
