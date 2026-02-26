@@ -41,6 +41,8 @@ jobs:
         uses: hashicorp/setup-terraform@v2
 
       - name: Terraform Init
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/gcp-key.json
         working-directory: ./projeto-02-docker-nginx/terraform
         run: terraform init
 
