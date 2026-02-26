@@ -15,8 +15,8 @@ variable "environment" {
   default     = "hml"
 }
 
-variable "grafana_password" {
-  description = "Senha do Grafana"
-  type        = string
-  sensitive   = true
-}
+#variable "grafana_password" {
+#  description = "Senha do Grafana"
+#  type        = string
+#  sensitive   = true
+#}
