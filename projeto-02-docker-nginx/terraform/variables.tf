@@ -1,7 +1,7 @@
 variable "project_id" {
   description = "ID do projeto GCP"
   type        = string
-  default     = "react-nginx"
+  default     = "playground-s-11-f23c9032"
 }
 
 variable "region" {
