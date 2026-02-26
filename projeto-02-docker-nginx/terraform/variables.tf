@@ -1,6 +1,7 @@
 variable "project_id" {
   description = "ID do projeto GCP"
   type        = string
+  default     = "react-nginx"
 }
 
 variable "region" {
@@ -19,4 +20,4 @@ variable "environment" {
 #  description = "Senha do Grafana"
 #  type        = string
 #  sensitive   = true
-#}
+#s
