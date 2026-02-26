@@ -32,9 +32,10 @@ jobs:
         env:
           GCP_KEY: ${{ secrets.GCP_SA_KEY }}
         run: |
-          echo "$GCP_KEY" > /tmp/gcp-key.json
+          echo "$GCP_KEY" | base64 -d > /tmp/gcp-key.json
           gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
           gcloud config set project playground-s-11-f23c9032
+          echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp-key.json" >> $GITHUB_ENV
 
 
       - name: Setup Terraform
