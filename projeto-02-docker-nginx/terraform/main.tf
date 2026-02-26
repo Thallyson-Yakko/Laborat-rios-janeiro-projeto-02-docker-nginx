@@ -42,11 +42,11 @@ module "artifact_registry" {
 }
 
 # Módulo Helm Charts
-module "helm_charts" {
-  source = "./modules/helm-charts"
-  
-  grafana_password = var.grafana_password
-  
-  # Depende do GKE estar criado
-  depends_on = [module.gke]
-}
+#module "helm_charts" {
+#  source = "./modules/helm-charts"
+#  
+#  grafana_password = var.grafana_password
+#  
+#  # Depende do GKE estar criado
+#  depends_on = [module.gke]
+#}
