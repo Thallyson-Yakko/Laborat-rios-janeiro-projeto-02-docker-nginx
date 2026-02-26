@@ -26,7 +26,8 @@ jobs:
 
       - name: Autenticar no GCP
         run: |
-         echo "${{ secrets.GCP_SA_KEY_BASE64 }}" | base64 -d > /tmp/gcp-key.json
+          echo "${{ secrets.GCP_SA_KEY_BASE64 }}" | base64 --decode > /tmp/gcp-key.json
+          cat /tmp/gcp-key.json
           gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
 
       - name: Setup Terraform
