@@ -14,7 +14,7 @@ spec:
   gatewayClassName: envoy
   listeners:
   - name: http
-    protocol: HTTP
+    protocol: HTTPcd
     port: 80
   - name: https
     protocol: HTTPS

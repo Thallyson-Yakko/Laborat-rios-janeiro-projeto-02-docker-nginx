@@ -6,9 +6,13 @@ metadata:
 spec:
   parentRefs:
   - name: react-nginx-gateway
-  hostnames:
-  - "app.local"
+  #hostnames:
+  #- "app.local"
   rules:
-  - backendRefs:
+  - matches:
+      - path:
+          type: PathPrefix
+          value: "/app"  
+    backendRefs:
     - name: react-nginx-service
       port: 80
