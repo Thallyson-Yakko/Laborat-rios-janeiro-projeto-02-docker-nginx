@@ -24,11 +24,18 @@ jobs:
         uses: actions/checkout@v3
 
 
+
+      - name: Setup Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
       - name: Autenticar no GCP
+        env:
+          GCP_KEY: ${{ secrets.GCP_SA_KEY }}
         run: |
-          echo "${{ secrets.GCP_SA_KEY_BASE64 }}" | base64 --decode > /tmp/gcp-key.json
-          cat /tmp/gcp-key.json
+          echo "$GCP_KEY" > /tmp/gcp-key.json
           gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
+          gcloud config set project playground-s-11-f23c9032
+
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
