@@ -16,11 +16,9 @@ terraform {
     }
   }
   
-  # Backend GCS (opcional - comente se não criou bucket)
-  backend "gcs" {
-    bucket = "react-nginxterraform-state"
-    prefix = "hml/terraform/state"
-  }
+
+backend "local" {
+  path = "terraform.tfstate"
 }
 
 # Provider Google
