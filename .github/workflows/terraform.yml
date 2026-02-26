@@ -23,17 +23,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Debug Secret
-        run: |
-          if [ -z "${{ secrets.GCP_SA_KEY }}" ]; then
-          echo "ERROR: Secret is empty!"
-          exit 1
-          else
-          echo "Secret exists and has content"
-          echo "Length: $(echo '${{ secrets.GCP_SA_KEY }}' | wc -c)"
-          fi
-
-
 
       - name: Autenticar no GCP
         run: |
