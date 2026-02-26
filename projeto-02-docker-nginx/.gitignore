@@ -1,17 +1,22 @@
-# Diretorios
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+terraform.tfvars
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+
+# Docs e módulos (já no repo principal)
 terraform-modules/
 docs/
 app/
-.terraform/
-node_modules/
-
-# Arquivos
 Makefile
 terraform.tfvars.example
 deployment.yaml.example
 ARCHITECTURE.md
-terraform.tfvars
-.terraform.lock.hcl
-*.tfstate
-*.tfstate.backup
-.DS_Store
