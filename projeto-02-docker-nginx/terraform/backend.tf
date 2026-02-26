@@ -19,6 +19,7 @@ terraform {
 
 backend "local" {
   path = "terraform.tfstate"
+  }
 }
 
 # Provider Google
