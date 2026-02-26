@@ -47,16 +47,22 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/gcp-key.json
         if: github.event.inputs.terraform == 'plan' || github.event.inputs.terraform == 'apply'
         working-directory: ./projeto-02-docker-nginx/terraform
         run: terraform plan
 
       - name: Terraform Apply
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/gcp-key.json
         if: github.event.inputs.terraform == 'apply'
         working-directory: ./projeto-02-docker-nginx/terraform
         run: terraform apply -auto-approve
 
       - name: Terraform Destroy
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/gcp-key.json
         if: github.event.inputs.terraform == 'destroy'
         working-directory: ./projeto-02-docker-nginx/terraform
         run: terraform destroy -auto-approve
